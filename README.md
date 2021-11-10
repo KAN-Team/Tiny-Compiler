@@ -1,3 +1,3 @@
 # Tiny Compiler
 
-### [Milestones]
+### [Milestones](https://github.com/Abanoub-Asaad/Tiny-Compiler/tree/main/Milestones)
