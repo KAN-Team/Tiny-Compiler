@@ -1,1 +1,1 @@
-# Tiny-Compiler
+# Tiny Compiler
