@@ -1,0 +1,10 @@
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\bin\Debug\Tiny Compiler.exe.config
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\bin\Debug\Tiny Compiler.exe
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\bin\Debug\Tiny Compiler.pdb
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny Compiler.csproj.AssemblyReference.cache
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny_Compiler.Form1.resources
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny_Compiler.Properties.Resources.resources
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny Compiler.csproj.GenerateResource.cache
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny Compiler.csproj.CoreCompileInputs.cache
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny Compiler.exe
+C:\Users\abano\source\repos\Tiny Compiler\Tiny Compiler\obj\Debug\Tiny Compiler.pdb
