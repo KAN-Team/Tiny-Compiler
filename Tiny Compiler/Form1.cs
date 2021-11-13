@@ -17,6 +17,7 @@ namespace Tiny_Compiler
             InitializeComponent();
         }
 
+        Input getInputCode;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +25,21 @@ namespace Tiny_Compiler
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog op = new OpenFileDialog();
+            try
+            {
+                DialogResult res = op.ShowDialog();
+                string name = op.FileName;
+                if (res == System.Windows.Forms.DialogResult.OK)
+                {
+                    textBox1.Text = System.IO.File.ReadAllText(name);
+                    getInputCode = new Input(name);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
