@@ -1,0 +1,10 @@
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe.config
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.pdb
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.AssemblyReference.cache
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.Properties.Resources.resources
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.GenerateResource.cache
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb
+E:\Projects\VisualStudio\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.CompileForm.resources
