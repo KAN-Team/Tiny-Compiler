@@ -1,4 +1,4 @@
-> Scanner before design
+> Scanner after design
  
 # Tiny Compiler
 
