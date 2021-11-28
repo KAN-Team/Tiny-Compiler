@@ -5,7 +5,7 @@ namespace TinyCompiler.Core
     public enum TokenType
     {
         Constant, String, Float, Integer, StringText, If, Return, Repeat, Read, Write, Until, Elseif,
-        Else, End, Endl, Then, Main, Dot, Semicolon, Comma, LParanthesis, RParanthesis, 
+        Else, End, Endl, Then, Main, Semicolon, Comma, LParanthesis, RParanthesis, 
         LBraces, RBraces, EqualOp, LessThanOp, GreaterThanOp, NotEqualOp, PlusOp, MinusOp, 
         MultiplyOp, DivideOp, AndOp, OrOp, Idenifier, Assignment, Comment
     }
@@ -36,7 +36,6 @@ namespace TinyCompiler.Core
             tokenDescription.Add(TokenType.Endl, "Reserved endl");
             tokenDescription.Add(TokenType.Then, "Reserved then");
             tokenDescription.Add(TokenType.Main, "Identifier (Main)");
-            tokenDescription.Add(TokenType.Dot, "Dot");
             tokenDescription.Add(TokenType.Semicolon, "Semicolon");
             tokenDescription.Add(TokenType.Comma, "Comma");
             tokenDescription.Add(TokenType.LParanthesis, "Left Parentheses");

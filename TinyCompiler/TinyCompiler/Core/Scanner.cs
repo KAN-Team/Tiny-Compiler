@@ -20,10 +20,10 @@ namespace TinyCompiler.Core
             Tokens = new List<Token>();
             Operators = new Dictionary<string, TokenType>();
             ReservedWords = new Dictionary<string, TokenType>();
-            idRegex = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            idRegex = new Regex("^[a-zA-Z][a-zA-Z0-9_]*|_[a-zA-Z0-9]+_*$");
             numRegex = new Regex("^[+|-]?[0-9]+(.[0-9]+)?$");
             strRegex = new Regex("^\"[^\"]*\"$");
-            commRegex = new Regex("^/\\*([0-9a-zA-Z]| |\\+|-|\\*|/|<|>|=|<>)*\\*/$");
+            commRegex = new Regex("^/\\*(\\D|\\d|\\s)*\\*/$");
             initializer();
         }
 
@@ -45,7 +45,6 @@ namespace TinyCompiler.Core
             ReservedWords.Add("int", TokenType.Integer);
             ReservedWords.Add("float", TokenType.Float);
 
-            Operators.Add(".", TokenType.Dot);
             Operators.Add(";", TokenType.Semicolon);
             Operators.Add(",", TokenType.Comma);
             Operators.Add("(", TokenType.LParanthesis);
@@ -68,24 +67,26 @@ namespace TinyCompiler.Core
         public void StartScanning(string sourceCode)
         {
             line = 1;
+            int tempLines; // for comment statement and string text
             for (int i = 0; i < sourceCode.Length; ++i)
             {
                 int j = i;
                 char currentChar = sourceCode[i];
                 string currentLexeme = currentChar.ToString();
+                tempLines = 0;
 
                 if (currentChar == '\n')
                     line++;
                 if (currentChar == ' ' || currentChar == '\r' || currentChar == '\n' || currentChar == '\t')
                     continue;
 
-                if (char.IsLetter(currentChar))
+                if (char.IsLetter(currentChar) || currentChar == '_')
                 {
                     j++;
                     while (j < sourceCode.Length)
                     {
                         currentChar = sourceCode[j];
-                        if (!(char.IsLetter(currentChar) || char.IsDigit(currentChar)))
+                        if (!(char.IsLetter(currentChar) || char.IsDigit(currentChar) || currentChar == '_'))
                             break;
 
                         currentLexeme += currentChar;
@@ -116,6 +117,8 @@ namespace TinyCompiler.Core
                         j += 2;
                         while (j < sourceCode.Length)
                         {
+                            if (sourceCode[j] == '\n')
+                                tempLines++;
                             if (j < sourceCode.Length - 1 && sourceCode[j] == '*'
                                 && sourceCode[j + 1] == '/')
                             {
@@ -131,6 +134,8 @@ namespace TinyCompiler.Core
                         j++;
                         while (j < sourceCode.Length)
                         {
+                            if (sourceCode[j] == '\n')
+                                tempLines++;
                             if (sourceCode[j] == '"')
                             {
                                 j++;
@@ -181,6 +186,7 @@ namespace TinyCompiler.Core
                 }
 
                 findTokenType(currentLexeme);
+                line += tempLines;
                 i = j-1;
             }
 
