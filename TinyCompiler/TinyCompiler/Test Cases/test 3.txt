@@ -1,5 +1,5 @@
 /*Sample program 
-includes all 30 rules*/
+includes all 31 rules*/
 int sum(int a, int b)
 {
     return a + b;
