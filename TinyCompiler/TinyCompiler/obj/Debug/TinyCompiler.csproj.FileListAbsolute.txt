@@ -18,3 +18,13 @@ E:\Projects\[GitHub]\Desktop\TinyCompiler\TinyCompiler\TinyCompiler\obj\Debug\Ti
 E:\Projects\[GitHub]\Desktop\TinyCompiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\Desktop\TinyCompiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
 E:\Projects\[GitHub]\Desktop\TinyCompiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe.config
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.pdb
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.AssemblyReference.cache
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.CompileForm.resources
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.Properties.Resources.resources
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.GenerateResource.cache
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
+E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb

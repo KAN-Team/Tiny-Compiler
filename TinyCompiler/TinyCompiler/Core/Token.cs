@@ -25,7 +25,7 @@ namespace TinyCompiler.Core
             tokenDescription.Add(TokenType.Integer, "DataType(int)");
             tokenDescription.Add(TokenType.StringText, "String Text");
             tokenDescription.Add(TokenType.If, "Reserved if");
-            tokenDescription.Add( TokenType.Return, "Reserved return");
+            tokenDescription.Add(TokenType.Return, "Reserved return");
             tokenDescription.Add(TokenType.Repeat, "Reserved repeat");
             tokenDescription.Add(TokenType.Read, "Reserved read");
             tokenDescription.Add(TokenType.Write, "Reserved write");

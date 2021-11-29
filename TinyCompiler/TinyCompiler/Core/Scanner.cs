@@ -145,6 +145,22 @@ namespace TinyCompiler.Core
                         }
                         currentLexeme = sourceCode.Substring(i, j - i);
                     }
+                    else if (currentChar == '.')
+                    {
+                        j++;
+                        while (j < sourceCode.Length)
+                        {
+                            if (sourceCode[j] == '\n')
+                                tempLines++;
+                            if (sourceCode[j] == ' ' || sourceCode[j] == '\n')
+                            {
+                                j++;
+                                break;
+                            }
+                            j++;
+                        }
+                        currentLexeme = sourceCode.Substring(i, j - i);
+                    }
                     else if (currentChar == ':')
                     {
                         j++;
