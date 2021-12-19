@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TinyCompiler.backend;
+using TinyCompiler.Core;
 
 namespace TinyCompiler
 {
@@ -20,6 +21,7 @@ namespace TinyCompiler
         {
             HandleGuiEvents.compileEvent(sourceCodeTxt.Text);
             fillDataGridView();
+            fillParserTree();
         }
 
         private void fillDataGridView()
@@ -37,10 +39,13 @@ namespace TinyCompiler
                                    item.Key,            // Line #
                                    item.Value.Value);   // Description
         }
+        
 
-        private void sourceCodeTxt_TextChanged(object sender, EventArgs e)
+        private void fillParserTree()
         {
-            linesNumTxt.Text = HandleGuiEvents.getLinesNumbers(sourceCodeTxt.Text);
+            treeView1.Nodes.Clear();
+            treeView1.Nodes.Add(Parser.PrintParseTree(Compiler.treeroot));
         }
+
     }
 }

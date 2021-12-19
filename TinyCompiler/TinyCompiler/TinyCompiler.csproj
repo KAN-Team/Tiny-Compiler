@@ -49,6 +49,7 @@
     <Compile Include="backend\HandleGuiEvents.cs" />
     <Compile Include="Core\Compiler.cs" />
     <Compile Include="Core\Errors.cs" />
+    <Compile Include="Core\Parser.cs" />
     <Compile Include="Core\Scanner.cs" />
     <Compile Include="Core\Token.cs" />
     <Compile Include="Forms\MainForm.cs">
