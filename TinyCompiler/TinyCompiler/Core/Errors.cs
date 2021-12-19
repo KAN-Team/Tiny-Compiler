@@ -6,5 +6,8 @@ namespace TinyCompiler.Core
     {
         public static List<KeyValuePair<int, string>> errorsList 
             = new List<KeyValuePair<int, string>>();
+
+        public static List<string> parserErrors = new List<string>();
+
     }
 }

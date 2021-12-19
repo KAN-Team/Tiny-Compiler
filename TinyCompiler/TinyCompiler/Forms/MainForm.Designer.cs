@@ -40,6 +40,7 @@ namespace TinyCompiler
             this.loadFileBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.compileBtnHolderPanel = new System.Windows.Forms.Panel();
             this.compileBtn = new System.Windows.Forms.Button();
             this.loadFileBtnHolderPanel = new System.Windows.Forms.Panel();
@@ -50,14 +51,15 @@ namespace TinyCompiler
             this.sourceCodeHolderPanel = new System.Windows.Forms.Panel();
             this.linesNumTxt = new System.Windows.Forms.TextBox();
             this.sourceCodeTxt = new System.Windows.Forms.TextBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.parserTreeView = new System.Windows.Forms.TreeView();
             this.errorsHolder = new System.Windows.Forms.Panel();
             this.errorsListLbl = new System.Windows.Forms.Label();
             this.errorsDgv = new System.Windows.Forms.DataGridView();
             this.errorLexeme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.error = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.parserErrorsTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.compileBtnHolderPanel.SuspendLayout();
@@ -66,6 +68,7 @@ namespace TinyCompiler
             this.sourceCodeHolderPanel.SuspendLayout();
             this.errorsHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorsDgv)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // loadFileBtn
@@ -96,8 +99,9 @@ namespace TinyCompiler
             this.tableLayoutPanel.Controls.Add(this.loadFileBtnHolderPanel, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.tokensDgv, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.sourceCodeHolderPanel, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.treeView1, 2, 1);
+            this.tableLayoutPanel.Controls.Add(this.parserTreeView, 2, 1);
             this.tableLayoutPanel.Controls.Add(this.errorsHolder, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.panel2, 2, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -117,6 +121,17 @@ namespace TinyCompiler
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 50);
             this.panel1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(135, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Parser Tree";
             // 
             // compileBtnHolderPanel
             // 
@@ -253,16 +268,18 @@ namespace TinyCompiler
             this.sourceCodeTxt.Name = "sourceCodeTxt";
             this.sourceCodeTxt.Size = new System.Drawing.Size(371, 407);
             this.sourceCodeTxt.TabIndex = 11;
+            this.sourceCodeTxt.TextChanged += new System.EventHandler(this.sourceCodeTxt_TextChanged_1);
             // 
-            // treeView1
+            // parserTreeView
             // 
-            this.treeView1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.treeView1.Location = new System.Drawing.Point(824, 59);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(373, 205);
-            this.treeView1.TabIndex = 21;
+            this.parserTreeView.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.parserTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parserTreeView.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parserTreeView.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.parserTreeView.Location = new System.Drawing.Point(824, 59);
+            this.parserTreeView.Name = "parserTreeView";
+            this.parserTreeView.Size = new System.Drawing.Size(373, 205);
+            this.parserTreeView.TabIndex = 21;
             // 
             // errorsHolder
             // 
@@ -345,16 +362,22 @@ namespace TinyCompiler
             this.error.Name = "error";
             this.error.ReadOnly = true;
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(135, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Parser Tree";
+            this.panel2.Controls.Add(this.parserErrorsTextBox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(824, 270);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(373, 196);
+            this.panel2.TabIndex = 22;
+            // 
+            // parserErrorsTextBox
+            // 
+            this.parserErrorsTextBox.Location = new System.Drawing.Point(0, 3);
+            this.parserErrorsTextBox.Multiline = true;
+            this.parserErrorsTextBox.Name = "parserErrorsTextBox";
+            this.parserErrorsTextBox.Size = new System.Drawing.Size(373, 190);
+            this.parserErrorsTextBox.TabIndex = 0;
             // 
             // CompileForm
             // 
@@ -378,6 +401,8 @@ namespace TinyCompiler
             this.errorsHolder.ResumeLayout(false);
             this.errorsHolder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorsDgv)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,7 +420,7 @@ namespace TinyCompiler
         private System.Windows.Forms.Panel sourceCodeHolderPanel;
         private System.Windows.Forms.TextBox linesNumTxt;
         private System.Windows.Forms.TextBox sourceCodeTxt;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView parserTreeView;
         private System.Windows.Forms.Panel errorsHolder;
         private System.Windows.Forms.Label errorsListLbl;
         private System.Windows.Forms.DataGridView errorsDgv;
@@ -404,6 +429,8 @@ namespace TinyCompiler
         private System.Windows.Forms.DataGridViewTextBoxColumn error;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox parserErrorsTextBox;
     }
 }
 

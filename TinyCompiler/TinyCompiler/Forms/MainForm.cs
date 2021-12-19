@@ -19,9 +19,12 @@ namespace TinyCompiler
 
         private void compileBtn_Click(object sender, EventArgs e)
         {
-            HandleGuiEvents.compileEvent(sourceCodeTxt.Text);
-            fillDataGridView();
-            fillParserTree();
+            if (sourceCodeTxt.Text.Trim() != "")
+            {
+                HandleGuiEvents.compileEvent(sourceCodeTxt.Text);
+                fillDataGridView();
+                fillParserTree();
+            }
         }
 
         private void fillDataGridView()
@@ -39,13 +42,26 @@ namespace TinyCompiler
                                    item.Key,            // Line #
                                    item.Value.Value);   // Description
         }
-        
+
+        private void sourceCodeTxt_TextChanged_1(object sender, EventArgs e)
+        {
+            linesNumTxt.Text = HandleGuiEvents.getLinesNumbers(sourceCodeTxt.Text);
+
+        }
 
         private void fillParserTree()
         {
-            treeView1.Nodes.Clear();
-            treeView1.Nodes.Add(Parser.PrintParseTree(Compiler.treeroot));
+            parserTreeView.Nodes.Clear();
+            parserTreeView.Nodes.Add(Parser.PrintParseTree(Compiler.treeroot));
+            printParserErrors();
+            
         }
 
+        private void printParserErrors()
+        {
+            foreach (string error in Errors.parserErrors)
+                parserErrorsTextBox.Text += error;
+        }
+        
     }
 }

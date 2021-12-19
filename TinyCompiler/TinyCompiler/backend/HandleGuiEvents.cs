@@ -43,6 +43,7 @@ namespace TinyCompiler.backend
             Compiler.Lexemes.Clear();
             Compiler.TokenStream.Clear();
             Errors.errorsList.Clear();
+            Errors.parserErrors.Clear();
             Compiler.StartCompiling(sourceCode);
         }
 
