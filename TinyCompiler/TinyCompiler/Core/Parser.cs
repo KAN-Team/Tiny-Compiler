@@ -211,7 +211,7 @@ namespace TinyCompiler.Core
             return assignmentStatement;
         }
 
-        private Node Expression()
+        private Node Expression() 
         {
             Node expression = new Node("Expression");
             if(TokenType.StringText == TokenStream[tokensIndex].tokenType)
@@ -257,7 +257,7 @@ namespace TinyCompiler.Core
                 else
                 {
                     equation.Children.Add(Operation());
-                    equation.Children.Add(Term());
+                    equation.Children.Add(Expression());
                 }
             }
 
@@ -283,7 +283,7 @@ namespace TinyCompiler.Core
         {
             Node multipleTerms = new Node("Multiple Terms");
             multipleTerms.Children.Add(Operation());
-            multipleTerms.Children.Add(Term());
+            multipleTerms.Children.Add(Expression());
             multipleTerms.Children.Add(MultipleTerm());
 
             return multipleTerms;
@@ -295,7 +295,7 @@ namespace TinyCompiler.Core
             if (isStartWithOperation(tokensIndex))
             {
                 multipleTerm.Children.Add(Operation());
-                multipleTerm.Children.Add(Term());
+                multipleTerm.Children.Add(Expression());
                 multipleTerm.Children.Add(MultipleTerm());
                 return multipleTerm;
             }
@@ -384,13 +384,13 @@ namespace TinyCompiler.Core
             else if (TokenType.Constant == TokenStream[tokensIndex].tokenType)
                 functionCall.Children.Add(match(TokenType.Constant));   
             
-            functionCall.Children.Add(MultiIdentifiers());
+            functionCall.Children.Add(MultipleIdentifiers());
             functionCall.Children.Add(match(TokenType.RParanthesis));
 
             return functionCall;
         }
         
-        private Node MultiIdentifiers()
+        private Node MultipleIdentifiers()
         {
             Node multiIdentifiers = new Node("Multi Identifiers");
             if (TokenType.Comma == TokenStream[tokensIndex].tokenType)
@@ -400,7 +400,7 @@ namespace TinyCompiler.Core
                     multiIdentifiers.Children.Add(match(TokenType.Idenifier));
                 else
                     multiIdentifiers.Children.Add(match(TokenType.Constant));
-                multiIdentifiers.Children.Add(MultiIdentifiers());
+                multiIdentifiers.Children.Add(MultipleIdentifiers());
 
                 return multiIdentifiers;
             }
@@ -419,8 +419,96 @@ namespace TinyCompiler.Core
         private Node RepeatStatement()
         {
             Node repeatStatement = new Node("Repeat Statement");
+            repeatStatement.Children.Add(match(TokenType.Repeat));
+            repeatStatement.Children.Add(MultipleStatements());
+            repeatStatement.Children.Add(match(TokenType.Until));
+            repeatStatement.Children.Add(ConditionStatement());
 
             return repeatStatement;
+        }
+
+        
+        private Node MultipleStatements()
+        {
+            Node multipleStatements = new Node("Multiple Statements");
+            multipleStatements.Children.Add(Statement());
+            multipleStatements.Children.Add(MultipleStatement());
+
+            return multipleStatements;
+        }
+
+        private Node MultipleStatement()
+        {
+            Node multipleStatement = new Node("Multiple Statement");
+            if (TokenType.Comment == TokenStream[tokensIndex].tokenType || TokenType.Idenifier == TokenStream[tokensIndex].tokenType
+                || isStartWithDatatype() || TokenType.Write == TokenStream[tokensIndex].tokenType || TokenType.Read == TokenStream[tokensIndex].tokenType
+                || TokenType.If == TokenStream[tokensIndex].tokenType || TokenType.Repeat == TokenStream[tokensIndex].tokenType)
+            {
+                multipleStatement.Children.Add(Statement());
+                multipleStatement.Children.Add(MultipleStatement());
+                return multipleStatement;
+            }
+
+            return null;
+        }
+
+        private Node ConditionStatement()
+        {
+            Node conditionStatement = new Node("Condition Statements");
+            conditionStatement.Children.Add(Condition());
+            conditionStatement.Children.Add(MultipleCondition());
+
+            return conditionStatement;
+        }
+
+        private Node Condition()
+        {
+            Node condition = new Node("Condition");
+            condition.Children.Add(match(TokenType.Idenifier));
+            condition.Children.Add(ConditionOperator());
+            condition.Children.Add(Expression());
+            
+            return condition;
+        }
+
+        private Node ConditionOperator()
+        {
+            Node conditionOperator = new Node("Condition Operator");
+            if (TokenType.LessThanOp == TokenStream[tokensIndex].tokenType)
+                conditionOperator.Children.Add(match(TokenType.LessThanOp));
+            else if (TokenType.GreaterThanOp == TokenStream[tokensIndex].tokenType)
+                conditionOperator.Children.Add(match(TokenType.GreaterThanOp));
+            else if (TokenType.EqualOp == TokenStream[tokensIndex].tokenType)
+                conditionOperator.Children.Add(match(TokenType.EqualOp));
+            else if (TokenType.NotEqualOp == TokenStream[tokensIndex].tokenType)
+                conditionOperator.Children.Add(match(TokenType.NotEqualOp));
+
+            return conditionOperator;
+        }
+
+        private Node MultipleCondition()
+        {
+            Node multipleCondition = new Node("Multiple Condition");
+            if(TokenType.AndOp == TokenStream[tokensIndex].tokenType || TokenType.OrOp == TokenStream[tokensIndex].tokenType)
+            {
+                multipleCondition.Children.Add(BooleanOperator());
+                multipleCondition.Children.Add(Condition());
+                multipleCondition.Children.Add(MultipleCondition());
+                return multipleCondition;
+            }
+
+            return null;
+        }
+
+        private Node BooleanOperator()
+        {
+            Node booleanOperator = new Node("Boolean Operator");
+            if (TokenType.AndOp == TokenStream[tokensIndex].tokenType)
+                booleanOperator.Children.Add(match(TokenType.AndOp));
+            else if (TokenType.OrOp == TokenStream[tokensIndex].tokenType)
+                booleanOperator.Children.Add(match(TokenType.OrOp));
+
+            return booleanOperator;
         }
 
         private Node ReturnStatement()

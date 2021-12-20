@@ -21,8 +21,7 @@ namespace TinyCompiler.Core
             // Scanner
             TinyScanner.StartScanning(sourceCode);
             // Parser
-            TinyParser.StartParsing(TokenStream);
-            treeroot = TinyParser.root;
+            treeroot = TinyParser.StartParsing(TokenStream);
 
             // Semantic Analysis
         }
