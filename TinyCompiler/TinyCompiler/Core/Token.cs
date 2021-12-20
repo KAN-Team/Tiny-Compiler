@@ -10,7 +10,7 @@ namespace TinyCompiler.Core
         MultiplyOp, DivideOp, AndOp, OrOp, Idenifier, Assignment, Comment
     }
 
-    class Token
+    public class Token
     {
         public string lexeme;
         public TokenType tokenType;

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using TinyCompiler.backend;
+using TinyCompiler.Core;
+using TinyCompiler.Forms;
 
 namespace TinyCompiler
 {
@@ -18,8 +20,12 @@ namespace TinyCompiler
 
         private void compileBtn_Click(object sender, EventArgs e)
         {
-            HandleGuiEvents.compileEvent(sourceCodeTxt.Text);
-            fillDataGridView();
+            if (sourceCodeTxt.Text.Trim() != "")
+            {
+                HandleGuiEvents.compileEvent(sourceCodeTxt.Text);
+                fillDataGridView();
+                fillParserTree();
+            }
         }
 
         private void fillDataGridView()
@@ -38,9 +44,31 @@ namespace TinyCompiler
                                    item.Value.Value);   // Description
         }
 
-        private void sourceCodeTxt_TextChanged(object sender, EventArgs e)
+        private void sourceCodeTxt_TextChanged_1(object sender, EventArgs e)
         {
             linesNumTxt.Text = HandleGuiEvents.getLinesNumbers(sourceCodeTxt.Text);
+        }
+
+        private void fillParserTree()
+        {
+            parserTreeView.Nodes.Clear();
+            parserTreeView.Nodes.Add(Parser.PrintParseTree(Compiler.treeroot));
+            printParserErrors();
+            
+        }
+
+        private void printParserErrors()
+        {
+            parserErrorsTextBox.Text = "";
+            foreach (string error in Errors.parserErrors)
+                parserErrorsTextBox.Text += error;
+
+        }
+
+        private void maximizeParseTreeBtn_Click(object sender, EventArgs e)
+        {
+            if (sourceCodeTxt.Text.Trim() != "")
+                new ParseTreeForm().Show();
         }
     }
 }

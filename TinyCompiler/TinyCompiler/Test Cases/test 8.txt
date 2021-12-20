@@ -1,3 +1,8 @@
+int main()
+{
+/*This test will check reserved words with capital
+and small letters and missing return */
+
 x := 3 ;
 Read y ;
 
@@ -7,3 +12,5 @@ Repeat
 Write x ;
 x := x + 1 ;
 Until y < x
+/*return 0;*/
+}

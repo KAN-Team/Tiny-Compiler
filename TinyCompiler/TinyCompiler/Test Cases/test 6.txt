@@ -1,3 +1,9 @@
+int main()
+{
+/*this test will check the if statements and missing 
+Semicolon and Reserved words
+Syntax capital and small*/
+
 If(Var1 = 2) then
 Var1 := 1
 End;
@@ -16,3 +22,5 @@ Until x = 90;
 
 Read x;
 Write(x+7)
+return 0;
+}

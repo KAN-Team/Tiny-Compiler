@@ -1,3 +1,8 @@
+int main()
+{
+/*this test will check the missing then 
+in the if statement and reserved words*/
+
 x := 3 ;
 Read y ;
 
@@ -10,3 +15,4 @@ x := x + 1 ;
 Until y < x
 
 End
+}

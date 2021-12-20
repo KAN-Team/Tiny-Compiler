@@ -28,3 +28,14 @@ E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj
 E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
 E:\Projects\[GitHub]\Desktop\Abanoub\Tiny-Compiler\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe.config
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.exe
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\bin\Debug\TinyCompiler.pdb
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csprojAssemblyReference.cache
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.CompileForm.resources
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.Properties.Resources.resources
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.GenerateResource.cache
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.Forms.ParseTreeForm.resources
