@@ -38,15 +38,12 @@ namespace TinyCompiler.Core
         {
             Node program = new Node("Program");
             program.Children.Add(FunctionStatements());
-            try
-            {
+
+            if (tokensIndex < TokenStream.Count())
                 program.Children.Add(MainFunction());
-            }
-            catch (Exception e)
-            {
+            else
                 MessageBox.Show("The Program Must have The Entry Point (Main Function)", "Missing Main Function", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        
+                    
             //MessageBox.Show("Success");
             return program;
         }
@@ -196,7 +193,7 @@ namespace TinyCompiler.Core
                 statement.Children.Add(IfStatement());
             else if (TokenType.Repeat == TokenStream[tokensIndex].tokenType)
                 statement.Children.Add(RepeatStatement());
-            
+            else tokensIndex++;
             
             return statement;
         }
@@ -412,8 +409,46 @@ namespace TinyCompiler.Core
         private Node IfStatement()
         {
             Node ifStatement = new Node("If Statement");
+            ifStatement.Children.Add(match(TokenType.If));
+            ifStatement.Children.Add(ConditionStatement());
+            ifStatement.Children.Add(match(TokenType.Then));
+            ifStatement.Children.Add(MultipleStatements());
+            if(TokenType.Elseif == TokenStream[tokensIndex].tokenType)
+                ifStatement.Children.Add(ElseIfStatement());
+            else if (TokenType.Else == TokenStream[tokensIndex].tokenType)
+                ifStatement.Children.Add(ElseStatement());
+            else
+                ifStatement.Children.Add(match(TokenType.End));
 
             return ifStatement;
+        }
+
+
+        private Node ElseIfStatement()
+        {
+            Node elseIfStatement = new Node("ElseIf Statement");
+            elseIfStatement.Children.Add(match(TokenType.Elseif));
+            elseIfStatement.Children.Add(ConditionStatement());
+            elseIfStatement.Children.Add(match(TokenType.Then));
+            elseIfStatement.Children.Add(MultipleStatements());
+            if (TokenType.Elseif == TokenStream[tokensIndex].tokenType)
+                elseIfStatement.Children.Add(ElseIfStatement());
+            else if (TokenType.Else == TokenStream[tokensIndex].tokenType)
+                elseIfStatement.Children.Add(ElseStatement());
+            else
+                elseIfStatement.Children.Add(match(TokenType.End));
+
+            return elseIfStatement;
+        }
+
+        private Node ElseStatement()
+        {
+            Node elseStatement = new Node("Else Statement");
+            elseStatement.Children.Add(match(TokenType.Else));
+            elseStatement.Children.Add(MultipleStatements());
+            elseStatement.Children.Add(match(TokenType.End));
+
+            return elseStatement;
         }
 
         private Node RepeatStatement()
@@ -521,15 +556,7 @@ namespace TinyCompiler.Core
             return returnStatement;
         }
 
-
-
-
-
-
-
-
-
-
+        
         private bool isStartWithDatatype()
         {
             if (TokenType.Integer == TokenStream[tokensIndex].tokenType || TokenType.Float == TokenStream[tokensIndex].tokenType
@@ -557,9 +584,6 @@ namespace TinyCompiler.Core
             return false;
         }
 
-
-
-
         public Node match(TokenType ExpectedToken)
         {
             if (tokensIndex < TokenStream.Count)
@@ -570,7 +594,6 @@ namespace TinyCompiler.Core
                     Node newNode = new Node(ExpectedToken.ToString());
 
                     return newNode;
-
                 }
 
                 else

@@ -124,14 +124,15 @@ namespace TinyCompiler
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(135, 15);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 25);
+            this.label1.Size = new System.Drawing.Size(373, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Parser Tree";
+            this.label1.Text = "Parse Tree";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // compileBtnHolderPanel
             // 
@@ -373,11 +374,14 @@ namespace TinyCompiler
             // 
             // parserErrorsTextBox
             // 
-            this.parserErrorsTextBox.Location = new System.Drawing.Point(0, 3);
+            this.parserErrorsTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.parserErrorsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parserErrorsTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold);
+            this.parserErrorsTextBox.Location = new System.Drawing.Point(0, 0);
             this.parserErrorsTextBox.Multiline = true;
             this.parserErrorsTextBox.Name = "parserErrorsTextBox";
-            this.parserErrorsTextBox.Size = new System.Drawing.Size(373, 190);
-            this.parserErrorsTextBox.TabIndex = 0;
+            this.parserErrorsTextBox.Size = new System.Drawing.Size(373, 196);
+            this.parserErrorsTextBox.TabIndex = 11;
             // 
             // CompileForm
             // 
@@ -392,7 +396,6 @@ namespace TinyCompiler
             this.Text = "Compile Form";
             this.tableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.compileBtnHolderPanel.ResumeLayout(false);
             this.loadFileBtnHolderPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tokensDgv)).EndInit();
