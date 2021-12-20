@@ -1,3 +1,5 @@
+int main()
+{
 /* The test case integrates the line numbers with the multiline tokens */
 
 int _x;
@@ -10,3 +12,5 @@ string text := "this is a multiline
 textString";
 
 int y := .03;
+return 0;
+}

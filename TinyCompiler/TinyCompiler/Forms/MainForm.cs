@@ -46,7 +46,6 @@ namespace TinyCompiler
         private void sourceCodeTxt_TextChanged_1(object sender, EventArgs e)
         {
             linesNumTxt.Text = HandleGuiEvents.getLinesNumbers(sourceCodeTxt.Text);
-
         }
 
         private void fillParserTree()

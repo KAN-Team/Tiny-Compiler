@@ -1,15 +1,13 @@
-/* Sample program in Tiny language – computes factorial*/
 int main()
 {
-    int x;
-    read x; /*input an integer*/
-    if x > 0 then /*don’t compute if x <= 0 */
-    int fact := 1;
-    repeat
-    fact := fact * x;
-    x := x – 1;
-    until x = 0
-    write fact; /*output factorial of x*/
-    end
-    return 0;
+/*missing Semicolon and the tail of the comment syntax*/
+int x :=3;
+int Y :=4;
+if  X != Y then 
+    		write X;
+else
+    		write Y;
+/* This is a comment
+end
+return 0;
 }

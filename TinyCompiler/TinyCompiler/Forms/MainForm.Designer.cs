@@ -80,9 +80,9 @@ namespace TinyCompiler
             this.loadFileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loadFileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadFileBtn.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadFileBtn.Location = new System.Drawing.Point(118, 6);
+            this.loadFileBtn.Location = new System.Drawing.Point(87, 6);
             this.loadFileBtn.Name = "loadFileBtn";
-            this.loadFileBtn.Size = new System.Drawing.Size(150, 40);
+            this.loadFileBtn.Size = new System.Drawing.Size(181, 40);
             this.loadFileBtn.TabIndex = 9;
             this.loadFileBtn.Text = "Load file";
             this.loadFileBtn.UseVisualStyleBackColor = false;
