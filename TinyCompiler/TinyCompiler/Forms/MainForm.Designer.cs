@@ -40,7 +40,7 @@ namespace TinyCompiler
             this.loadFileBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.maximizeParseTreeBtn = new System.Windows.Forms.Button();
             this.compileBtnHolderPanel = new System.Windows.Forms.Panel();
             this.compileBtn = new System.Windows.Forms.Button();
             this.loadFileBtnHolderPanel = new System.Windows.Forms.Panel();
@@ -73,16 +73,14 @@ namespace TinyCompiler
             // 
             // loadFileBtn
             // 
-            this.loadFileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.loadFileBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(189)))), ((int)(((byte)(151)))));
             this.loadFileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadFileBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loadFileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadFileBtn.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadFileBtn.Location = new System.Drawing.Point(87, 6);
+            this.loadFileBtn.Location = new System.Drawing.Point(0, 0);
             this.loadFileBtn.Name = "loadFileBtn";
-            this.loadFileBtn.Size = new System.Drawing.Size(181, 40);
+            this.loadFileBtn.Size = new System.Drawing.Size(394, 50);
             this.loadFileBtn.TabIndex = 9;
             this.loadFileBtn.Text = "Load file";
             this.loadFileBtn.UseVisualStyleBackColor = false;
@@ -115,24 +113,28 @@ namespace TinyCompiler
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.maximizeParseTreeBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(824, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 50);
             this.panel1.TabIndex = 20;
             // 
-            // label1
+            // maximizeParseTreeBtn
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Parse Tree";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.maximizeParseTreeBtn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.maximizeParseTreeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.maximizeParseTreeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maximizeParseTreeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maximizeParseTreeBtn.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maximizeParseTreeBtn.ForeColor = System.Drawing.Color.White;
+            this.maximizeParseTreeBtn.Location = new System.Drawing.Point(0, 0);
+            this.maximizeParseTreeBtn.Name = "maximizeParseTreeBtn";
+            this.maximizeParseTreeBtn.Size = new System.Drawing.Size(373, 50);
+            this.maximizeParseTreeBtn.TabIndex = 13;
+            this.maximizeParseTreeBtn.Text = "Maximize Parse Tree";
+            this.maximizeParseTreeBtn.UseVisualStyleBackColor = false;
+            this.maximizeParseTreeBtn.Click += new System.EventHandler(this.maximizeParseTreeBtn_Click);
             // 
             // compileBtnHolderPanel
             // 
@@ -145,17 +147,15 @@ namespace TinyCompiler
             // 
             // compileBtn
             // 
-            this.compileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.compileBtn.BackColor = System.Drawing.Color.Crimson;
             this.compileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.compileBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.compileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.compileBtn.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compileBtn.ForeColor = System.Drawing.Color.White;
-            this.compileBtn.Location = new System.Drawing.Point(131, 6);
+            this.compileBtn.Location = new System.Drawing.Point(0, 0);
             this.compileBtn.Name = "compileBtn";
-            this.compileBtn.Size = new System.Drawing.Size(168, 40);
+            this.compileBtn.Size = new System.Drawing.Size(415, 50);
             this.compileBtn.TabIndex = 12;
             this.compileBtn.Text = "Compile";
             this.compileBtn.UseVisualStyleBackColor = false;
@@ -297,7 +297,7 @@ namespace TinyCompiler
             this.errorsListLbl.AutoSize = true;
             this.errorsListLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorsListLbl.ForeColor = System.Drawing.Color.Red;
-            this.errorsListLbl.Location = new System.Drawing.Point(-3, -3);
+            this.errorsListLbl.Location = new System.Drawing.Point(-2, -3);
             this.errorsListLbl.Name = "errorsListLbl";
             this.errorsListLbl.Size = new System.Drawing.Size(66, 15);
             this.errorsListLbl.TabIndex = 13;
@@ -376,7 +376,7 @@ namespace TinyCompiler
             // 
             this.parserErrorsTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.parserErrorsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parserErrorsTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold);
+            this.parserErrorsTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.parserErrorsTextBox.Location = new System.Drawing.Point(0, 0);
             this.parserErrorsTextBox.Multiline = true;
             this.parserErrorsTextBox.Name = "parserErrorsTextBox";
@@ -394,6 +394,7 @@ namespace TinyCompiler
             this.Name = "CompileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compile Form";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.compileBtnHolderPanel.ResumeLayout(false);
@@ -431,9 +432,9 @@ namespace TinyCompiler
         private System.Windows.Forms.DataGridViewTextBoxColumn line;
         private System.Windows.Forms.DataGridViewTextBoxColumn error;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox parserErrorsTextBox;
+        private System.Windows.Forms.Button maximizeParseTreeBtn;
     }
 }
 

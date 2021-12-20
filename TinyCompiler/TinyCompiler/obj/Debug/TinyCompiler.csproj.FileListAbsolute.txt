@@ -38,3 +38,4 @@ F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCo
 F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.csproj.CoreCompileInputs.cache
 F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.exe
 F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.pdb
+F:\Draasa\Fourth Year\First Semister\Compiler\Project\Mielstone #2\Parser\TinyCompiler\TinyCompiler\obj\Debug\TinyCompiler.Forms.ParseTreeForm.resources

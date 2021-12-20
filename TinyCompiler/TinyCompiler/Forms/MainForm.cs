@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using TinyCompiler.backend;
 using TinyCompiler.Core;
+using TinyCompiler.Forms;
 
 namespace TinyCompiler
 {
@@ -61,7 +62,13 @@ namespace TinyCompiler
             parserErrorsTextBox.Text = "";
             foreach (string error in Errors.parserErrors)
                 parserErrorsTextBox.Text += error;
+
         }
-        
+
+        private void maximizeParseTreeBtn_Click(object sender, EventArgs e)
+        {
+            if (sourceCodeTxt.Text.Trim() != "")
+                new ParseTreeForm().Show();
+        }
     }
 }
