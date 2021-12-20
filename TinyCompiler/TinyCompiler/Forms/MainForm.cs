@@ -59,6 +59,7 @@ namespace TinyCompiler
 
         private void printParserErrors()
         {
+            parserErrorsTextBox.Text = "";
             foreach (string error in Errors.parserErrors)
                 parserErrorsTextBox.Text += error;
         }
