@@ -14,3 +14,10 @@ Implementing a Compiler to a new programming language called "Tiny".
 - ![2](https://user-images.githubusercontent.com/52586356/146839038-653c347b-0e84-4509-aff6-7fad7112cdca.png)
 
 - ![3](https://user-images.githubusercontent.com/52586356/146839147-7996f82b-d4e7-4342-8464-78a56e655b58.png)
+
+***
+
+#### Copyrights
+- Kareem S. Fathy - Kareem S. Ragab - Abanoub A. Azaab - Nada M. Abdelhamed - Nada S. Anies
+- KAN Org.
+- University of Ain Shams, Egypt
