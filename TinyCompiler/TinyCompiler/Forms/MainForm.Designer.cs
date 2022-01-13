@@ -309,6 +309,9 @@ namespace TinyCompiler
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.errorsDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.errorsDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.errorsDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.errorsDgv.BackgroundColor = System.Drawing.Color.DimGray;
             this.errorsDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -326,10 +329,9 @@ namespace TinyCompiler
             this.line,
             this.error});
             this.errorsDgv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorsDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.errorsDgv.EnableHeadersVisualStyles = false;
             this.errorsDgv.GridColor = System.Drawing.Color.Silver;
-            this.errorsDgv.Location = new System.Drawing.Point(0, 0);
+            this.errorsDgv.Location = new System.Drawing.Point(0, 16);
             this.errorsDgv.Margin = new System.Windows.Forms.Padding(4);
             this.errorsDgv.Name = "errorsDgv";
             this.errorsDgv.ReadOnly = true;
@@ -339,7 +341,7 @@ namespace TinyCompiler
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.errorsDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.errorsDgv.RowTemplate.Height = 30;
-            this.errorsDgv.Size = new System.Drawing.Size(415, 196);
+            this.errorsDgv.Size = new System.Drawing.Size(415, 180);
             this.errorsDgv.TabIndex = 16;
             // 
             // errorLexeme
