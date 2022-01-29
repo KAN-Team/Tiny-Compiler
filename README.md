@@ -3,7 +3,7 @@ Implementing a Compiler to a new programming language called "Tiny".
 
 - Fully Functional Scanner (for the Lexical Analysis Phase).
 
-- Fully Functional Parser (for the Semantic Analysis Phase).
+- Fully Functional Parser (for the Syntax Analysis Phase).
 
 - #### [Milestones](Milestones)
 
